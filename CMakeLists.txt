@@ -4,13 +4,14 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 include(CheckIPOSupported)
 check_ipo_supported(RESULT supported OUTPUT error)
 
-project(project LANGUAGES CXX)
+project(mandelbrot-set LANGUAGES CXX)
 
 add_executable(${PROJECT_NAME} 
+    src/App.cpp
     src/main.cpp
 )
 
-set_property(TARGET project PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
+set_property(TARGET mandelbrot-set PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
     -lfmt
